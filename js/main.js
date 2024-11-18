@@ -1,18 +1,28 @@
+
 const app = Vue.createApp({
     data() {
         return {
-            intro: 'Welcome to my Vue template',
+            introName: 'Navigate your webapp using C#',
+            buttonpressed: {
+                notes: 'this button is pressed',
+                completed: false
+            }
         }
     },
+    // TODO: Add methods
     methods: {
-        myMethod(){
+        pressed() {
+            this.buttonpressed.completed = true;
+        },
+        changecolour(){
 
-        },
-    },
-    computed: {
-        myComputed() {
-            return ''
-        },
-        
+           let a = document.getElementById("testButton2").getAttribute("class");
+           console.log(a) 
+      
+          if(a=="button")
+            document.getElementById("testButton2").setAttribute("class","button1");
+          else
+            document.getElementById("testButton2").setAttribute("class","button");     
+        }
     }
-})
+});
